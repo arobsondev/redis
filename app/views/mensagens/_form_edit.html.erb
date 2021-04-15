@@ -1,0 +1,15 @@
+<%= form_tag(mensagem_path, method: 'put') do |form| %>
+  <div class="field">
+    <%= label_tag(:titulo, "Título" )%>
+    <%= text_field_tag(:titulo, @key) %>
+  </div>
+
+  <div class="field">
+    <%= label_tag(:corpo, "Corpo") %>
+    <%= text_area_tag(:corpo, REDIS_CLIENT.get(@key)) %>
+  </div>
+
+  <div class="actions">
+    <%= submit_tag("Salvar") %>
+  </div>
+<% end %>

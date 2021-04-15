@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Titulo:</strong>
+  <%= @key %>
+</p>
+
+<p>
+  <strong>Corpo:</strong>
+  <%= @mensagem[:"#{@key}"] %>
+</p>
+
+<%= link_to 'Edit', edit_mensagem_path(@key) %> |
+<%= link_to 'Back', mensagens_path %>
